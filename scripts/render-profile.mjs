@@ -37,7 +37,23 @@ function enrichReadme(template, locale) {
     `${stack}\n\n---`,
   );
 
+  if (locale === 'en') {
+    enriched = enriched.replace(
+      '> The AI has seen a long trail of real development work — including the parts that failed and had to be repaired.',
+      '> AI has reviewed a long trail of real development work — including the parts that failed and had to be repaired.',
+    );
+  }
+
   return enriched;
+}
+
+function enrichExperience(template, locale) {
+  const legacy = readPartial(`EXPERIENCE_LEGACY.${locale}.md`);
+
+  return template.replace(
+    '## Production Web',
+    `${legacy}\n\n---\n\n## Production Web`,
+  );
 }
 
 const generatedHeader = '<!-- GENERATED FILE — edit profile/* and run node scripts/render-profile.mjs -->\n\n';
@@ -48,8 +64,8 @@ const outputs = [
   ['docs/PROJECTS.en.md', en.projects],
   ['docs/HOMELAB.md', ko.homelab],
   ['docs/HOMELAB.en.md', en.homelab],
-  ['docs/EXPERIENCE.md', ko.experience],
-  ['docs/EXPERIENCE.en.md', en.experience],
+  ['docs/EXPERIENCE.md', enrichExperience(ko.experience, 'ko')],
+  ['docs/EXPERIENCE.en.md', enrichExperience(en.experience, 'en')],
   ['docs/AI_WORKFLOW.md', ko.aiWorkflow],
   ['docs/AI_WORKFLOW.en.md', en.aiWorkflow]
 ];
