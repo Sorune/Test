@@ -25,7 +25,7 @@ function readPartial(name) {
 
 function enrichReadme(template, locale) {
   const intro = readPartial(`INTRO.${locale}.md`);
-  const stats = readPartial('STATS.md');
+  const stack = readPartial('STACK.md');
 
   let enriched = template.replace(
     '## 🚀 Selected Work',
@@ -33,8 +33,8 @@ function enrichReadme(template, locale) {
   );
 
   enriched = enriched.replace(
-    '## 📫 Contact',
-    `${stats}\n\n---\n\n## 📫 Contact`,
+    /## 🛠 Stack\n[\s\S]*?\n---/,
+    `${stack}\n\n---`,
   );
 
   return enriched;
