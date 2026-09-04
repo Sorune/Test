@@ -1,0 +1,11 @@
+{
+  "name": "Sorune",
+  "github": "https://github.com/Sorune",
+  "email": "zksktldl125@naver.com",
+  "fieldSites": 18,
+  "gridMasonryVersion": "0.3.0",
+  "gridMasonryRepo": "https://github.com/Sorune/grid-masonry",
+  "gridMasonrySite": "https://grid-masonry.sorune.org/",
+  "gridMasonryDocsEn": "https://grid-masonry.sorune.org/docs/en/",
+  "gridMasonryDocsKo": "https://grid-masonry.sorune.org/docs/ko/"
+}

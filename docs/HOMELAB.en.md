@@ -2,9 +2,9 @@
 
 # Homelab / Operations
 
-[한국어](./HOMELAB.md) · [English](./HOMELAB.en.md) · [← 프로필](../README.md)
+[한국어](./HOMELAB.md) · [English](./HOMELAB.en.md) · [← Profile](../README.en.md)
 
-개발 결과를 로컬에서 끝내지 않고, 직접 운영 가능한 self-hosted 환경에서 deployment, observability, storage, recovery를 검증합니다.
+I use a self-hosted environment to validate deployment, observability, storage, and recovery outside local development.
 
 ## What I operate
 
@@ -30,11 +30,11 @@ Storage · Backup · Restore
 
 ## Engineering focus
 
-- application business logic와 infrastructure placement 책임 분리
-- Git-backed configuration / operational procedures
-- monitoring을 운영 계약으로 취급
-- failure recovery까지 acceptance 범위에 포함
+- separating application business logic from infrastructure placement
+- Git-backed configuration and operational procedures
+- treating monitoring as an operational contract
+- including failure recovery in acceptance
 
 ## Public disclosure boundary
 
-공개 문서에는 내부 IP, credential, private route, storage path 등 공격 표면을 넓힐 수 있는 상세 topology를 공개하지 않습니다.
+Public documents intentionally omit internal IPs, credentials, private routes, storage paths, and other topology details that would unnecessarily expand the attack surface.

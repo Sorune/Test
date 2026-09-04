@@ -1,6 +1,8 @@
+<!-- GENERATED FILE — edit profile/* and run node scripts/render-profile.mjs -->
+
 # Experience / Background
 
-[← Profile preview](../README.md)
+[한국어](./EXPERIENCE.md) · [English](./EXPERIENCE.en.md) · [← 프로필](../README.md)
 
 ## Industrial Control / Automation
 
@@ -10,11 +12,10 @@
 
 ### Swimming Pool Monitoring & Control
 
-수영장 설비의 전체 관제 시스템을 구성했습니다.
+수영장 설비의 **전체 관제 시스템**을 구성했습니다.
 
 - sensor / PLC 기반 설비 상태 수집
-- 장비 상태 모니터링
-- 제어 명령 처리
+- 장비 상태 모니터링 및 제어 명령 처리
 - 운전 상태 관제
 - 현장 장비와 상위 모니터링 시스템 간 상태 동기화
 
@@ -25,22 +26,9 @@
 - 온·습도 센서 기반 상태 판단
 - PLC / 설비 통신
 - 공조 제어 로직
-- 장비 상태 monitoring
 - 이상 상태 감지 및 alarm 연계
 
 ### Smart Farm Greenhouse Automation
-
-온도 기반 온실 자동 제어 시스템을 구현했습니다.
-
-```text
-Temperature / Sensor Input
-           ↓
-      Control Logic
-      ↙    ↓     ↘
-Irrigation Heater Vent / Open-Close
-           ↓
-        Feedback
-```
 
 - 온도 기반 온실 환경 제어
 - 관수 제어
@@ -61,8 +49,7 @@ Irrigation Heater Vent / Open-Close
 
 ### 신장장애인협회 울산지부
 
-기존 PHP 기반 시스템을 NestJS + React 구조로 마이그레이션하고,
-서로 분리되어 있던 두 서버를 하나의 Node 기반 서버로 통합했습니다.
+기존 PHP 기반 시스템을 NestJS + React 구조로 마이그레이션하고, 서로 분리되어 있던 두 서버를 하나의 Node 기반 서버로 통합했습니다.
 
 - 시스템 구조 설계
 - PHP → NestJS + React migration
@@ -76,15 +63,8 @@ Irrigation Heater Vent / Open-Close
 - 공주온밤
 - 공산성 미디어아트
 
-실제 서비스 요구사항을 기준으로 페이지 구조와 기능을 구현하고 배포했습니다.
+### Earlier Project — GTT
 
----
-
-## Earlier Project
-
-### GTT
-
-Riot API 기반 게임 커뮤니티 프로젝트.
-
+- Riot API 기반 게임 커뮤니티
 - JPA / Join Fetch 성능 실험
 - WebSocket 기반 실시간 기능 구현
