@@ -25,8 +25,6 @@ build → verify → integrate → operate
 I build **backend systems, runtimes, platforms, and operational automation**, primarily with Java / Spring and TypeScript.  
 I prefer explicit responsibility boundaries and structures that can be verified by real consumers and operating environments over rapidly accumulating features.
 
-I aim to build **scalable and efficient systems**.
-
 > **Reusability, automation, and stability**
 
 Areas of interest: **performance optimization · user experience · automation · real-time data processing · operational reliability**
