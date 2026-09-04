@@ -23,26 +23,37 @@ function readPartial(name) {
   return fs.readFileSync(path.join(root, 'profile/partials', name), 'utf8').trim();
 }
 
+function replaceRequired(template, marker, replacement, label) {
+  if (!template.includes(marker)) {
+    throw new Error(`Profile render marker not found (${label}): ${marker}`);
+  }
+  return template.replace(marker, replacement);
+}
+
+function replacePatternRequired(template, pattern, replacement, label) {
+  if (!pattern.test(template)) {
+    throw new Error(`Profile render pattern not found (${label}): ${pattern}`);
+  }
+  return template.replace(pattern, replacement);
+}
+
 function enrichReadme(template, locale) {
   const intro = readPartial(`INTRO.${locale}.md`);
   const stack = readPartial('STACK.md');
 
-  let enriched = template.replace(
+  let enriched = replaceRequired(
+    template,
     '## 🚀 Selected Work',
     `${intro}\n\n## 🚀 Selected Work`,
+    `${locale} README intro`,
   );
 
-  enriched = enriched.replace(
+  enriched = replacePatternRequired(
+    enriched,
     /## 🛠 Stack\n[\s\S]*?\n---/,
     `${stack}\n\n---`,
+    `${locale} README stack`,
   );
-
-  if (locale === 'en') {
-    enriched = enriched.replace(
-      '> The AI has seen a long trail of real development work — including the parts that failed and had to be repaired.',
-      '> AI has reviewed a long trail of real development work — including the parts that failed and had to be repaired.',
-    );
-  }
 
   return enriched;
 }
@@ -50,9 +61,22 @@ function enrichReadme(template, locale) {
 function enrichExperience(template, locale) {
   const legacy = readPartial(`EXPERIENCE_LEGACY.${locale}.md`);
 
-  return template.replace(
+  return replaceRequired(
+    template,
     '## Production Web',
     `${legacy}\n\n---\n\n## Production Web`,
+    `${locale} legacy experience`,
+  );
+}
+
+function enrichAiWorkflow(template, locale) {
+  const evidence = readPartial(`AI_EVIDENCE.${locale}.md`);
+
+  return replaceRequired(
+    template,
+    '## Development History Disclosure',
+    `${evidence}\n\n## Development History Disclosure`,
+    `${locale} AI workflow evidence`,
   );
 }
 
@@ -66,8 +90,8 @@ const outputs = [
   ['docs/HOMELAB.en.md', en.homelab],
   ['docs/EXPERIENCE.md', enrichExperience(ko.experience, 'ko')],
   ['docs/EXPERIENCE.en.md', enrichExperience(en.experience, 'en')],
-  ['docs/AI_WORKFLOW.md', ko.aiWorkflow],
-  ['docs/AI_WORKFLOW.en.md', en.aiWorkflow]
+  ['docs/AI_WORKFLOW.md', enrichAiWorkflow(ko.aiWorkflow, 'ko')],
+  ['docs/AI_WORKFLOW.en.md', enrichAiWorkflow(en.aiWorkflow, 'en')]
 ];
 
 for (const [target, template] of outputs) {
