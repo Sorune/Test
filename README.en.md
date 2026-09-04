@@ -76,7 +76,7 @@ Before web development, I built **LabVIEW / PLC-based industrial monitoring and 
 ---
 
 > 🤖 **AI-reviewed from actual development history — not generated from a résumé prompt.**  
-> The AI has seen a long trail of real development work — including the parts that failed and had to be repaired.  
+> AI has reviewed a long trail of real development work — including the parts that failed and had to be repaired.  
 > This is not an official certification; I remain responsible for the factual accuracy and public claims.
 
 [How I work with AI →](./docs/AI_WORKFLOW.en.md)
