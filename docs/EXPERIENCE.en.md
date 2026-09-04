@@ -54,7 +54,7 @@ I migrated a legacy PHP system to NestJS + React and consolidated two previously
 - server consolidation
 - backend / frontend implementation
 - build / deployment
-- responsible for system design and implementation/build, excluding visual design
+- responsible for design of the system and implementation/build, excluding visual design
 
 ### Other Delivered Web Projects
 
