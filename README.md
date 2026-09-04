@@ -25,6 +25,12 @@ build → verify → integrate → operate
 Java / Spring과 TypeScript를 중심으로 **백엔드, 런타임, 플랫폼, 운영 자동화**를 다룹니다.  
 복잡한 기능을 빠르게 쌓기보다 책임과 경계를 나누고, 실제 consumer와 운영 환경에서 검증 가능한 구조를 만드는 것을 선호합니다.
 
+**확장 가능하고 효율적인 시스템 설계**를 추구합니다.
+
+> **재사용성과 자동화, 그리고 안정성**
+
+관심 분야: **성능 최적화 · 사용자 경험 · 자동화 · 실시간 데이터 처리 · 운영 안정성**
+
 ## 🚀 Selected Work
 
 - **[grid-masonry](https://github.com/Sorune/grid-masonry)** — public TypeScript masonry geometry library · `0.3.0` released
@@ -62,6 +68,15 @@ Self-hosted 환경에서 deployment, monitoring, storage, backup / restore, aler
 > 공식 인증은 아니며, 최종 사실 관계와 공개 내용은 제가 책임집니다.
 
 [AI와 개발하는 방식 보기 →](./docs/AI_WORKFLOW.md)
+
+---
+
+## 📊 GitHub Stats
+
+<p>
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Sorune&show_icons=true&theme=github_dark&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sorune&layout=compact&theme=github_dark&hide_border=true" />
+</p>
 
 ---
 

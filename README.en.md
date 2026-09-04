@@ -25,6 +25,12 @@ build → verify → integrate → operate
 I build **backend systems, runtimes, platforms, and operational automation**, primarily with Java / Spring and TypeScript.  
 I prefer explicit responsibility boundaries and structures that can be verified by real consumers and operating environments over rapidly accumulating features.
 
+I aim to build **scalable and efficient systems**.
+
+> **Reusability, automation, and stability**
+
+Areas of interest: **performance optimization · user experience · automation · real-time data processing · operational reliability**
+
 ## 🚀 Selected Work
 
 - **[grid-masonry](https://github.com/Sorune/grid-masonry)** — public TypeScript masonry geometry library · `0.3.0` released
@@ -61,6 +67,15 @@ Before web development, I built **LabVIEW / PLC-based industrial monitoring and 
 > This is not an official certification; I remain responsible for the factual accuracy and public claims.
 
 [How I work with AI →](./docs/AI_WORKFLOW.en.md)
+
+---
+
+## 📊 GitHub Stats
+
+<p>
+  <img height="165" src="https://github-readme-stats.vercel.app/api?username=Sorune&show_icons=true&theme=github_dark&hide_border=true" />
+  <img height="165" src="https://github-readme-stats.vercel.app/api/top-langs/?username=Sorune&layout=compact&theme=github_dark&hide_border=true" />
+</p>
 
 ---
 
