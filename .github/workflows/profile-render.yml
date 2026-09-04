@@ -20,32 +20,43 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - uses: actions/setup-node@v4
         with:
           node-version: '22'
 
-      - name: Render Korean and English profile pages
-        run: node scripts/render-profile.mjs
-
-      - name: Commit generated pages
+      - name: Render and publish Korean and English profile pages
         shell: bash
         run: |
-          if git diff --quiet; then
-            echo 'Generated pages are already up to date.'
-            exit 0
-          fi
+          set -euo pipefail
 
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git add README.md README.en.md docs/*.md
-          git commit -m 'docs: regenerate bilingual profile'
 
-          git fetch origin "${GITHUB_REF_NAME}"
-          remote_sha="$(git rev-parse "origin/${GITHUB_REF_NAME}")"
-          if [ "${remote_sha}" != "${GITHUB_SHA}" ]; then
-            echo 'Branch advanced while rendering; a newer workflow run will publish the latest generated profile.'
-            exit 0
-          fi
+          for attempt in 1 2 3; do
+            echo "Render attempt ${attempt}/3"
 
-          git push origin "HEAD:${GITHUB_REF_NAME}"
+            git fetch origin "${GITHUB_REF_NAME}"
+            git reset --hard "origin/${GITHUB_REF_NAME}"
+
+            node scripts/render-profile.mjs
+
+            if git diff --quiet; then
+              echo 'Generated pages are already up to date.'
+              exit 0
+            fi
+
+            git add README.md README.en.md docs/*.md
+            git commit -m 'docs: regenerate bilingual profile'
+
+            if git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+
+            echo 'Branch advanced before publish; retrying from the latest remote state.'
+          done
+
+          echo 'Failed to publish generated profile after 3 attempts.' >&2
+          exit 1
